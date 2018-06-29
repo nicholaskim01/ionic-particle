@@ -11,7 +11,7 @@ import { ParticleProvider } from '../../providers/particle/particle';
 export class FunctionPage {
 
   public functionExists: boolean = false;
-  public functionName: string = 'led';
+  public functionName: string = 'motor';
   public functionParameter: string = 'on';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public particle: ParticleProvider) {
@@ -27,7 +27,15 @@ export class FunctionPage {
 
   callFunction() {
     this.particle.callFunction(this.functionName, this.functionParameter);
+    if(this.functionParameter === 'on'){
+      this.functionParameter = 'off';
+    } else {
+      this.functionParameter = 'on';
+    }
+
+
   }
+
 
   login() {
     this.navCtrl.push( LoginPage );

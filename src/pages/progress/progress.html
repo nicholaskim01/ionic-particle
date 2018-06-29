@@ -9,7 +9,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Progress</ion-title>
+    <ion-title>Battery</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -19,7 +19,7 @@
       <button ion-button (click)="login()">Login</button>
   </div>
   <div *ngIf="particle.token && particle.device">
-    <h5>Progress</h5>
+    <h5>Battery</h5>
     <!-- The particle-progress component subscribes to an event and updates its value from the event data -->
     <particle-progress [event]="eventName" [min]="2" [max]="10"></particle-progress>
   </div>
